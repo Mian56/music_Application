@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="636.0" style="-fx-background-color: #f4f4f4;" styleClass="pane" stylesheets="@reg.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.registerationController">
+    <!-- Background Image -->
+    <ImageView fitHeight="533.0" fitWidth="636.0" pickOnBounds="true" preserveRatio="false">
+        <image>
+            <Image url="@com/example/images/registeration_bg.jpeg" />
+        </image>
+    </ImageView>
+
+    <Label layoutX="25.0" layoutY="14.0" style="-fx-font-size: 24; -fx-text-fill: #333;" text="Register" />
+
+                <Label layoutX="126.0" layoutY="85.0" style="-fx-text-fill: black;" text="First Name:" />
+       <TextField fx:id="firstNameField" layoutX="246.0" layoutY="83.0" promptText="Enter your first name" styleClass="text-field" stylesheets="@reg.css" />
+
+                <Label layoutX="127.0" layoutY="129.0" style="-fx-text-fill: black;" text="Last Name:" />
+       <TextField fx:id="lastNameField" layoutX="246.0" layoutY="127.0" promptText="Enter your last name" styleClass="text-field" stylesheets="@reg.css" />
+
+                <Label layoutX="161.0" layoutY="182.0" style="-fx-text-fill: black;" text="Email:" />
+       <TextField fx:id="emailField" layoutX="252.0" layoutY="178.0" promptText="Enter your email" styleClass="text-field" stylesheets="@reg.css" />
+
+                <Label layoutX="131.0" layoutY="226.0" style="-fx-text-fill: black;" text="Password:" />
+       <PasswordField fx:id="passwordField" layoutX="252.0" layoutY="224.0" promptText="Enter your password" styleClass="text-field" stylesheets="@reg.css" />
+
+                <Label layoutX="71.0" layoutY="269.0" style="-fx-text-fill: black;" text="Confirm Password:" />
+       <PasswordField fx:id="confirmPasswordField" layoutX="252.0" layoutY="267.0" promptText="Confirm your password" styleClass="text-field" stylesheets="@reg.css" />
+
+                <Button fx:id="registerButton" layoutX="249.0" layoutY="374.0" onAction="#handleRegister" prefHeight="18.0" prefWidth="98.0" style="-fx-background-color: #3498db; -fx-text-fill: white;" styleClass="button-d" stylesheets="@reg.css" text="Sign up" />
+
+                <Button layoutX="112.0" layoutY="438.0" onAction="#handleBackToLogin" prefHeight="42.0" prefWidth="372.0" style="-fx-text-fill: white; -fx-background-color: transparent;" styleClass="button-d" stylesheets="@reg.css" text="Already have an account? Click           to Login" />
+
+                <Text fx:id="statusMessage" layoutX="164.0" layoutY="334.0" style="-fx-fill: red;" wrappingWidth="35.20002441406257" />
+   <Text fill="#130915" layoutX="361.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Here" wrappingWidth="42.399999999999864" />
+
+   <padding>
+      <Insets bottom="25.0" left="60.0" right="20.0" top="10.0" />
+   </padding>
+</AnchorPane>

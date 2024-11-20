@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" prefWidth="400.0" stylesheets="@musicView.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicapp.MusicController">
+    <children>
+        <!-- Main Application Content -->
+        <MenuBar fx:id="menuBar" stylesheets="@musicView.css" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
+            <Menu text="Account">
+                <MenuItem onAction="#handleProfileAction" text="Profile" />
+                <MenuItem onAction="#handlePreferencesAction" text="Preferences" />
+                <MenuItem onAction="#handleHelpAction" text="Help" />
+            <MenuItem onAction="#handleLogOutAction" text="Logout" />
+            </Menu>
+         <styleClass>
+            <String fx:value="label" />
+            <String fx:value="menu-bar" />
+         </styleClass>
+        </MenuBar>
+
+                    <TextArea fx:id="searchBar" layoutX="550" prefHeight="7.0" prefWidth="300" promptText="Enter Song, Artist, Album, or Genre" AnchorPane.topAnchor="10" />
+        <ListView fx:id="currentPlaylist" layoutX="799.0" layoutY="86.0" />
+        <Label fx:id="songTitle" layoutX="683.0" layoutY="656.0" style="-fx-text-fill: black;" text="No song playing" />
+        <ImageView fx:id="albumArt" fitHeight="100" fitWidth="100" layoutX="683.0" layoutY="556.0" />
+
+        <HBox layoutX="474.0" layoutY="686.0" spacing="10">
+            <Button fx:id="previousButton" onAction="#onPreviousButtonClick" text="Previous" />
+            <Button fx:id="playButton" onAction="#onPlayButtonClick" text="Play" />
+            <Button fx:id="pauseButton" onAction="#onPauseButtonClick" text="Pause" />
+            <Button fx:id="nextButton" onAction="#onNextButtonClick" text="Next" />
+            <Button fx:id="shuffleButton" text="Shuffle" />
+        </HBox>
+
+        <Button fx:id="themeToggleButton" layoutX="870.0" layoutY="48.0" onAction="#onThemeToggleButtonClick" text="Toggle Theme" />
+
+        <StackPane fx:id="overlayPane" style="-fx-background-color: rgba(0, 0, 0, 0.5);" visible="false">
+            <BorderPane fx:id="profilePane" prefHeight="400" prefWidth="300" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;" translateX="0" translateY="0">
+                <top>
+                    <HBox alignment="CENTER_RIGHT">
+                        <!-- Close Button for the Pop-Up -->
+                        <Button onAction="#closeProfilePane" text="X" />
+                    </HBox>
+                </top>
+                <center>
+                    <VBox alignment="CENTER" spacing="10">
+                        <ImageView fx:id="profileImage" fitHeight="100" fitWidth="100" />
+                        <Label fx:id="usernameLabel" text="Username" />
+                        <HBox alignment="CENTER">
+                            <Label fx:id="firstNameLabel" text="First Name" />
+                            <Label text=" " />
+                            <Label fx:id="lastNameLabel" text="Last Name" />
+                        </HBox>
+                        <Label fx:id="addressLabel" text="Address" wrapText="true" />
+                    </VBox>
+                </center>
+                <bottom>
+                    <Button fx:id="paymentButton" onAction="#handlePaymentAction" text="Payment" BorderPane.alignment="CENTER" />
+
+                </bottom>
+            </BorderPane>
+        </StackPane>
+      <VBox layoutX="246.0" layoutY="32.0" prefHeight="433.0" prefWidth="138.0" style="-fx-background-color: pink;" AnchorPane.bottomAnchor="31.600000000000023">
+         <children>
+            <AnchorPane prefHeight="722.0" prefWidth="178.0">
+               <children>
+                  <Text layoutX="16.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MELODIFY">
+                     <font>
+                        <Font name="System Bold Italic" size="30.0" />
+                     </font>
+                  </Text>
+                  <VBox layoutX="30.0" layoutY="145.0" prefHeight="171.0" prefWidth="100.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handleHome_btn" text="Home">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleSearch_btn" text="Search">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleLibrary_btn" text="Library">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handlePlayList_btn" text="Play List">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleLikes_btn" text="Likes">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleSetting_btn" text="Settings">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Text fx:id="nameId" layoutX="81.0" layoutY="632.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                  <ImageView fx:id="profilePic" fitHeight="52.0" fitWidth="62.0" layoutX="16.0" layoutY="602.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+    </children>
+</AnchorPane>

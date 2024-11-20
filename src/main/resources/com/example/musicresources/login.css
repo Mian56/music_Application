@@ -1,0 +1,52 @@
+/* Music-themed pane with foggy glass effect */
+.pane {
+    -fx-background-color: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(30, 58, 95, 0.6), rgba(255, 75, 143, 0.6)); /* Translucent gradient */
+    -fx-background-radius: 10px;
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+
+    /* Frosted glass blur effect */
+    -fx-effect: gaussian-blur(10); /* Increase for a stronger blur effect */
+
+    /* Inner shadow for depth */
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.5, 0, 4);
+}
+
+/* Outer shadow for soft lift effect */
+.pane_outer_shadow {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 20, 0.2, 0, 5);
+}
+
+.button-d{
+     -fx-background-color: linear-gradient(to bottom, #3a5256, #2d4044); /* Dark gradient */
+        -fx-text-fill: #ffffff; /* White text for contrast */
+        -fx-font-size: 15px; /* Slightly larger font size */
+        -fx-font-weight: bold;
+        -fx-padding: 10px 20px;
+        -fx-background-radius: 8px;
+        -fx-border-radius: 8px;
+        -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 5, 0.2, 0, 2); /* Subtle shadow */
+        -fx-cursor: hand;
+        -fx-transition: all 0.3s ease; /* Smooth transition */
+}
+
+.button-d:hover{
+ -fx-background-color: linear-gradient(to bottom, #2d4044, #3a5256); /* Slightly lighter gradient on hover */
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.5), 8, 0.3, 0, 3); /* Stronger shadow on hover */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05; /* Small scaling for emphasis */
+}
+
+.text-field {
+    -fx-background-color: #3a5256; /* Base color */
+    -fx-text-fill: Black; /* Text color */
+    -fx-background-radius: 5;
+    -fx-padding: 6 12;
+}
+
+.text-field:hover {
+    -fx-background-color: linear-gradient(to bottom, #2d4044, #3a5256); /* Slightly lighter gradient on hover */
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.5), 8, 0.3, 0, 3); /* Stronger shadow on hover */
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02; /* Small scaling for emphasis */
+}

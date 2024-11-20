@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="733.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.loginController">
+
+    <children>
+        <!-- Background ImageView covering the entire AnchorPane -->
+        <ImageView fitHeight="482.0" fitWidth="734.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-27.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@com/example/images/logo.jpg" />
+            </image>
+
+        </ImageView>
+
+        <Text fx:id="statusMessage" layoutX="50" layoutY="220" style="-fx-fill: red;" />
+      <VBox layoutX="165.0" layoutY="30.0" prefHeight="394.0" prefWidth="368.0" styleClass="pane" stylesheets="@login.css">
+         <children>
+              <Label prefHeight="36.0" prefWidth="324.0" style="-fx-text-fill: #ffb3c6;" styleClass="text" text="Welcome to Melodify!" textAlignment="CENTER">
+                  <font>
+                      <Font name="Arial Bold Italic" size="30.0" />
+                  </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="10.0" />
+               </VBox.margin>
+              </Label>
+      
+              <Label style="-fx-text-fill: #ffb3c6;" text="Email">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+              <TextField fx:id="usernameField" promptText="Enter your email" style="-fx-background-color: #ecf0f1;" styleClass="text-field">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="100.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+      
+              <Label style="-fx-text-fill: #ffb3c6;" text="Password">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+              <PasswordField fx:id="passwordField" promptText="Enter your password" style="-fx-background-color: #ecf0f1;" styleClass="text-field">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="100.0" top="10.0" />
+               </VBox.margin>
+            </PasswordField>
+            <Button onAction="#handleForgotPassword" prefHeight="10.0" prefWidth="166.0" style="-fx-background-color: #3498db; -fx-text-fill: #ffb3c6; -fx-background-color: transparent;" styleClass="button-d" text="Forgot Password?">
+               <font>
+                  <Font name="Arial" size="14" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Button>
+      
+              <Button onAction="#handleLogin" prefHeight="26.0" prefWidth="104.0" style="-fx-background-color: #3498db; -fx-text-fill: white;" styleClass="button-d" text="Login">
+                  <font>
+                      <Font name="Arial" size="14" />
+                  </font>
+               <VBox.margin>
+                  <Insets left="100.0" top="5.0" />
+               </VBox.margin>
+              </Button>
+            <Button onAction="#handleRegister" prefHeight="42.0" prefWidth="330.0" style="-fx-background-color: #3498db; -fx-text-fill: #ffb3c6; -fx-background-color: transparent;" styleClass="button-d" text="Dont have an account? Register Here!">
+               <font>
+                  <Font name="Arial" size="14" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+
+    </children>
+
+
+</AnchorPane>

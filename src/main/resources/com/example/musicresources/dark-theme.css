@@ -1,0 +1,59 @@
+.root {
+    -fx-background-color: #2e2e2e;
+    -fx-text-fill: #ffffff;
+}
+
+.button {
+    -fx-background-color: #444444;
+    -fx-text-fill: #ffffff;
+}
+
+.label {
+    -fx-text-fill: #ffffff;
+}
+.text-area{
+    -fx-background-color: #444444;
+
+}
+.list-view{
+    -fx-background-color: #444444;
+}
+.menu{
+    -fx-background-color: #444444;
+}
+.menu-item{
+    -fx-background-color: #444444;
+}
+.menu-bar{
+    -fx-background-color: #444444;
+}
+/* Dark theme for profilePane and overlay */
+#overlayPane {
+    -fx-background-color: rgba(0, 1, 1, 0.7); /* Dark background with transparency */
+
+    #BorderPane {
+        -fx-background-color: #000000B2;
+    }
+
+    #profilePane {
+        -fx-background-color: #000000B2; /* Dark gray background for profile content */
+        -fx-border-color: #555; /* Lighter border to differentiate */
+        -fx-border-width: 1;
+        -fx-border-radius: 10;
+        -fx-background-radius: 10;
+    }
+
+    #profilePane .label {
+        -fx-text-fill: #ffffff; /* White text for labels */
+        -fx-background-color: #000000B2;
+    }
+
+    #profilePane .button {
+        -fx-background-color: #555; /* Dark background for buttons */
+        -fx-text-fill: #ffffff; /* White text for buttons */
+    }
+
+    #profilePane .button:hover {
+        -fx-background-color: #666; /* Slightly lighter on hover */
+    }
+}
