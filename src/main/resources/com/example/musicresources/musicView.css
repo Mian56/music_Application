@@ -1,0 +1,20 @@
+
+/* Change the background color of the MenuBar */
+.menu-bar {
+    -fx-background-color: #3498db; /* Example: Light blue */
+}
+
+/* Change the text color of the menus */
+.menu-bar .label {
+    -fx-text-fill: white; /* Example: White text */
+}
+
+/* Hover effect for menu items */
+.menu-item {
+    -fx-background-color: transparent; /* Default transparent background */
+    -fx-text-fill: white; /* White text */
+}
+
+.menu-item:hover {
+    -fx-background-color: #2980b9; /* Example: Darker blue on hover */
+}
