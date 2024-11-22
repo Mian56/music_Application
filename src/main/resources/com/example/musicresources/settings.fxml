@@ -4,39 +4,51 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="model.Settings" prefWidth="600.0" prefHeight="400.0" style="-fx-background-color: #f5f5f5;">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="model.Settings">
 
     <!-- Main VBox container for alignment -->
-    <VBox alignment="TOP_CENTER" spacing="20" prefWidth="600" layoutX="0" layoutY="0">
+    <VBox alignment="TOP_CENTER" layoutX="0" layoutY="0" prefWidth="600" spacing="20">
 
         <!-- Title Section -->
-        <Label text="Settings" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-padding: 10;" />
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-padding: 10;" text="Settings" />
 
         <!-- Content Section -->
-        <GridPane hgap="20" vgap="15" alignment="CENTER">
+        <GridPane alignment="CENTER" hgap="20" vgap="15">
             <!-- Dark Mode Row -->
             <Label text="Enable Dark Mode:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <CheckBox fx:id="darkModeCheckBox" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
             <!-- Account Settings -->
-            <Label text="Account Settings:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2" />
+            <Label style="-fx-font-weight: bold;" text="Account Settings:" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
             <Label text="Username: johndoe123" GridPane.columnIndex="0" GridPane.rowIndex="2" />
             <Button fx:id="changePasswordButton" text="Change Password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
             <!-- Notifications -->
-            <Label text="Notifications:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2" />
+            <Label style="-fx-font-weight: bold;" text="Notifications:" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
             <CheckBox fx:id="notificationsCheckBox" text="Enable Notifications" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
         </GridPane>
 
         <!-- Button Row -->
-        <HBox spacing="15" alignment="CENTER" prefWidth="600">
-            <Button fx:id="saveSettingsButton" text="Save" style="-fx-background-color: #4caf50; -fx-text-fill: white;" />
-            <Button fx:id="cancelSettingsButton" text="Cancel" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+        <HBox alignment="CENTER" prefWidth="600" spacing="15">
+            <Button fx:id="saveSettingsButton" style="-fx-background-color: #4caf50; -fx-text-fill: white;" text="Save" />
+            <Button fx:id="cancelSettingsButton" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Cancel" />
         </HBox>
     </VBox>
 </AnchorPane>

@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootPane" prefWidth="400.0" stylesheets="@musicView.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicapp.MusicController">
+<AnchorPane fx:id="rootPane" prefWidth="400.0" stylesheets="@musicView.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicapp.MusicController">
     <children>
         <!-- Main Application Content -->
         <MenuBar fx:id="menuBar" stylesheets="@musicView.css" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10">
