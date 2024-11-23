@@ -56,8 +56,13 @@ public class Settings{
     private void loadSettings() {
         // You can load other settings here if needed
         notificationsCheckBox.setSelected(true);  // Example of another setting
+        darkModeCheckBox.setSelected(isDarkMode);
     }
-
+    private void setupButtonActions() {
+        saveSettingsButton.setOnAction(event -> handleSaveSettings());
+        cancelSettingsButton.setOnAction(event -> handleCancelSettings());
+        changePasswordButton.setOnAction(event -> handleChangePassword());
+    }
     @FXML
     private void handleSaveSettings() {
         System.out.println("Settings saved!");
