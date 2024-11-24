@@ -6,7 +6,7 @@
     -fx-border-radius: 10px;
 
     /* Frosted glass blur effect */
-    -fx-effect: gaussian-blur(10); /* Increase for a stronger blur effect */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.5, 0, 0);
 
     /* Inner shadow for depth */
     -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.5, 0, 4);

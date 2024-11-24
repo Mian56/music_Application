@@ -8,7 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 public class registerationController {
 
@@ -27,6 +30,8 @@ public class registerationController {
 
     private DataBase database;
     private Runnable onRegistrationSuccess;  // Callback for successful registration
+    private String localStoragePath;         // Selected storage location
+
 
     @FXML
     public void initialize() {
@@ -59,8 +64,13 @@ public class registerationController {
             return;
         }
 
+        if (localStoragePath == null || localStoragePath.isEmpty()) {
+            statusMessage.setText("Please select a storage location.");
+            return;
+        }
+
         // Attempt to register the user
-        boolean registrationSuccess = database.registerUser(firstName, lastName, email, password);
+        boolean registrationSuccess = database.registerUser(firstName, lastName, email, password, localStoragePath);
         if (registrationSuccess) {
             statusMessage.setText("Registration successful!");
 
@@ -70,6 +80,7 @@ public class registerationController {
             emailField.clear();
             passwordField.clear();
             confirmPasswordField.clear();
+            localStoragePath = null;
 
             // Trigger the success callback if available
             if (onRegistrationSuccess != null) {
@@ -102,4 +113,22 @@ public class registerationController {
             statusMessage.setText("Error loading login page.");
         }
     }
+
+    public void pickStorageLocation(ActionEvent actionEvent) {
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        directoryChooser.setTitle("Select Storage Location");
+
+        Stage stage = (Stage) statusMessage.getScene().getWindow();
+        File selectedDirectory = directoryChooser.showDialog(stage);
+
+        if (selectedDirectory != null) {
+            localStoragePath = selectedDirectory.getAbsolutePath();
+            statusMessage.setText("Selected storage location: " + localStoragePath);
+        } else {
+            statusMessage.setText("No directory selected.");
+        }
+    }
+
 }
+
+

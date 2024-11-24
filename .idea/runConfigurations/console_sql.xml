@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="console.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+    <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/757fd210-be09-4976-99b7-50d4a0c7e96c/console.sql" />
+    <script-mode>FILE</script-mode>
+    <data-source id="757fd210-be09-4976-99b7-50d4a0c7e96c" namespace="schema/&quot;musicapplication&quot;" />
+    <method v="2" />
+  </configuration>
+</component>
