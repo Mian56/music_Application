@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="model.Settings">
-
+<AnchorPane prefHeight="400.0" prefWidth="562.0" style="-fx-background-color: #00BFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 0, 5); -fx-background-image: url('/com/example/musicresources/theme.jpg'); -fx-background-size: cover; -fx-background-position: center;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="model.Settings">
     <!-- Main VBox container for alignment -->
     <VBox alignment="TOP_CENTER" layoutX="0" layoutY="0" prefWidth="600" spacing="20">
 
