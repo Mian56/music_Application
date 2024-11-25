@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -27,10 +29,55 @@ public class registerationController {
     private PasswordField confirmPasswordField;
     @FXML
     private Text statusMessage;
+    @FXML
+    private Label statusFirstName;
+    @FXML
+    private Label statusLastName;
+    @FXML
+    private Label statusEmail;
+    @FXML
+    private Button registerButton;
 
     private DataBase database;
     private Runnable onRegistrationSuccess;  // Callback for successful registration
     private String localStoragePath;         // Selected storage location
+    private final String firstName_regeex ="[A-Za-z]{5,25}";
+    private final String lastName_regeex ="[A-Za-z]{5,25}";
+    private final String email_regeex ="(\\w+)@(\\w+).(edu|com|net)";
+    private final String password_regeex ="";
+
+
+    public boolean checkFirstName(){
+        String firstName = firstNameField.getText();
+        boolean isValid = firstName.matches(firstName_regeex);
+        if(!isValid){
+            statusFirstName.setText("Invalid First Name");
+        }
+        return isValid;
+    }
+    public boolean checkLastName(){
+        String lastName = lastNameField.getText();
+        boolean isValid = lastName.matches(lastName_regeex);
+        if(!isValid){
+            statusLastName.setText("Invalid Last Name");
+        }
+        return isValid;
+    }
+    public boolean checkEmail(){
+        String email = emailField.getText();
+        boolean isValid = email.matches(email_regeex);
+        if(!isValid){
+            statusEmail.setText("Invalid Email");
+        }
+        return isValid;
+    }
+    public boolean checkPassword(){
+        String password = passwordField.getText();
+        boolean isValid = password.matches(password_regeex);
+        return isValid;
+    }
+
+
 
 
     @FXML
@@ -58,6 +105,10 @@ public class registerationController {
             statusMessage.setText("All fields are required.");
             return;
         }
+        checkFirstName();
+        checkLastName();
+        checkEmail();
+
 
         if (!password.equals(confirmPassword)) {
             statusMessage.setText("Passwords do not match.");
