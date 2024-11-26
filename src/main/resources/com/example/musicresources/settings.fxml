@@ -13,9 +13,11 @@
 <AnchorPane prefHeight="400.0" prefWidth="562.0" style="-fx-background-color: #00BFFF; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0.5, 0, 5); -fx-background-image: url('/com/example/musicresources/theme.jpg'); -fx-background-size: cover; -fx-background-position: center;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:id="rootPane" fx:controller="model.Settings">
     <!-- Main VBox container for alignment -->
     <VBox alignment="TOP_CENTER" layoutX="0" layoutY="0" prefWidth="600" spacing="20">
+        <CheckBox text="Enable Auto-Update" layoutX="20" layoutY="140" fx:id="autoUpdateCheckBox" />
 
         <!-- Title Section -->
         <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-padding: 10;" text="Settings" />
+        <Label text="Version: 1.0.0" layoutX="20" layoutY="220" fx:id="versionLabel"/>
 
         <!-- Content Section -->
         <GridPane alignment="CENTER" hgap="20" vgap="15">
@@ -31,17 +33,17 @@
             <!-- Notifications -->
             <Label style="-fx-font-weight: bold;" text="Notifications:" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
             <CheckBox fx:id="notificationsCheckBox" text="Enable Notifications" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-         <columnConstraints>
-            <ColumnConstraints />
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
         </GridPane>
 
         <!-- Button Row -->

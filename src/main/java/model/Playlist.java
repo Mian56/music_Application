@@ -8,6 +8,7 @@ public class Playlist {
     private String name;
     private ObservableList<Song> songs;
 
+
     // No-argument constructor
     public Playlist() {
         this.id = 0; // Default ID

@@ -23,12 +23,24 @@ public class Settings{
     @FXML
     private AnchorPane rootPane;
 
+    @FXML
+    private CheckBox autoUpdateCheckBox;
+
     private boolean isDarkMode = false;
 
     public void initialize() {
+
+        autoUpdateCheckBox.setSelected(true);
+        autoUpdateCheckBox.setOnAction(event -> {
+            if (autoUpdateCheckBox.isSelected()) {
+                System.out.println("Auto-update enabled.");
+            } else {
+                System.out.println("Auto-update disabled.");
+            }
+        });
+
         setupThemeToggle();
-//        loadUserSettings();
-        loadSettings();  // Load the settings (without requiring user label)
+        loadSettings();
 
     }
 
